@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cronos — Morpheus Relojoaria</title>
+    <script>
+      // SPA Fallback Redirect para GitHub Pages
+      // Converte requisições diretas em rotas compatíveis com HashRouter
+      const isGithubIo = window.location.hostname.endsWith('github.io');
+      const segments = window.location.pathname.split('/').filter(Boolean);
+      let repoPrefix = '';
+      let routePath = '';
+
+      if (isGithubIo && segments.length > 0) {
+        repoPrefix = '/' + segments[0];
+        routePath = '/' + segments.slice(1).join('/');
+      } else {
+        routePath = window.location.pathname;
+      }
+
+      const search = window.location.search || '';
+      const target = (repoPrefix || '.') + '/#' + (routePath === '/' ? '' : routePath) + search;
+      window.location.replace(target);
+    </script>
+  </head>
+  <body style="background: #0B0D12; color: #FFF21A; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <p style="font-weight: 600;">Carregando Cronos...</p>
+  </body>
+</html>

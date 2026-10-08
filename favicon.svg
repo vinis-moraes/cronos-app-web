@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF21A" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <linearGradient id="dialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1E26" />
+      <stop offset="100%" stop-color="#0B0D12" />
+    </linearGradient>
+  </defs>
+  <!-- Background rounded squircle -->
+  <rect width="64" height="64" rx="16" fill="#0B0D12"/>
+  
+  <!-- Pocket Watch Top Winder Crown -->
+  <rect x="28" y="5" width="8" height="5" rx="2" fill="url(#goldGrad)" />
+  <rect x="25" y="3" width="14" height="3" rx="1.5" fill="url(#goldGrad)" />
+  
+  <!-- Outer Watch Ring -->
+  <circle cx="32" cy="36" r="23" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" />
+  
+  <!-- Inner Watch Dial -->
+  <circle cx="32" cy="36" r="21" fill="url(#dialGrad)" />
+  
+  <!-- Hour Markers -->
+  <rect x="31" y="18" width="2" height="4" rx="1" fill="#FFF21A" />
+  <rect x="31" y="50" width="2" height="4" rx="1" fill="#FFF21A" />
+  <rect x="14" y="35" width="4" height="2" rx="1" fill="#FFF21A" />
+  <rect x="46" y="35" width="4" height="2" rx="1" fill="#FFF21A" />
+  
+  <!-- Precision minute ticks -->
+  <circle cx="43" cy="25" r="1" fill="#6B7280" />
+  <circle cx="43" cy="47" r="1" fill="#6B7280" />
+  <circle cx="21" cy="25" r="1" fill="#6B7280" />
+  <circle cx="21" cy="47" r="1" fill="#6B7280" />
+  
+  <!-- Hands pointing to 10:10 (Traditional Watchmaker Aesthetic) -->
+  <!-- Hour hand -->
+  <line x1="32" y1="36" x2="24" y2="28" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Minute hand -->
+  <line x1="32" y1="36" x2="42" y2="24" stroke="#FFF21A" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Center Pin Jewel -->
+  <circle cx="32" cy="36" r="3" fill="#FFF21A" />
+  <circle cx="32" cy="36" r="1" fill="#0B0D12" />
+</svg>
