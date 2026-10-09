@@ -22,8 +22,8 @@ messaging.onBackgroundMessage((payload) => {
   const notificationTitle = payload.notification?.title ?? 'Cronos';
   const notificationOptions = {
     body: payload.notification?.body ?? '',
-    icon: '/icons/icon-192.png',
-    badge: '/icons/icon-192.png',
+    icon: './icons/icon-192.png',
+    badge: './icons/icon-192.png',
     data: payload.data,
     vibrate: [200, 100, 200],
     tag: payload.data?.bill_id ?? 'cronos',
@@ -36,7 +36,7 @@ messaging.onBackgroundMessage((payload) => {
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   const billId = event.notification.data?.bill_id;
-  const url = billId ? `/boletos/${billId}` : '/';
+  const url = billId ? `./#/boletos/${billId}` : './#/';
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
       for (const client of clientList) {

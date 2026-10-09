@@ -12,17 +12,33 @@
     <!-- PWA -->
     <link rel="manifest" href="./manifest.json" />
     <meta name="theme-color" content="#0B0D12" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Cronos" />
-    <link rel="apple-touch-icon" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 
     <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="64x64" href="./favicon.png" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <script type="module" crossorigin src="./assets/index-jsTPZ6an.js"></script>
+
+    <script>
+      // Early capture of beforeinstallprompt so React components never miss it
+      window.__pwaInstallPrompt = null;
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        window.__pwaInstallPrompt = e;
+        window.dispatchEvent(new CustomEvent('pwa-prompt-available', { detail: e }));
+      });
+      window.addEventListener('appinstalled', function () {
+        window.__pwaInstallPrompt = null;
+        window.dispatchEvent(new CustomEvent('pwa-installed'));
+      });
+    </script>
+    <script type="module" crossorigin src="./assets/index-BwIsLsW-.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-CbXtAM7H.js">
-    <link rel="modulepreload" crossorigin href="./assets/icons-CH3It-Sv.js">
-    <link rel="modulepreload" crossorigin href="./assets/vendor-Ckz0Y-b8.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-DwLuB8G5.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-ChQzZDEP.js">
     <link rel="modulepreload" crossorigin href="./assets/supabase-BbozEmIR.js">
     <link rel="stylesheet" crossorigin href="./assets/index-DHwpHpCc.css">
   </head>
