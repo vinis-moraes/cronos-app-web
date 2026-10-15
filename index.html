@@ -23,6 +23,14 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 
     <script>
+      // Early theme restore to prevent flash of wrong theme
+      try {
+        var savedTheme = localStorage.getItem('cronos-theme');
+        if (savedTheme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+
       // Early capture of beforeinstallprompt so React components never miss it
       window.__pwaInstallPrompt = null;
       window.addEventListener('beforeinstallprompt', function (e) {
@@ -35,12 +43,13 @@
         window.dispatchEvent(new CustomEvent('pwa-installed'));
       });
     </script>
-    <script type="module" crossorigin src="./assets/index-Dy3bBQKc.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-CbXtAM7H.js">
-    <link rel="modulepreload" crossorigin href="./assets/icons-ysbEyI32.js">
-    <link rel="modulepreload" crossorigin href="./assets/vendor-CTLHmoo8.js">
+    <script type="module" crossorigin src="./assets/index-CU_1vIr9.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-hePW80VL.js">
+    <link rel="modulepreload" crossorigin href="./assets/charts-Vdyr51nt.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-BLJVm9vG.js">
     <link rel="modulepreload" crossorigin href="./assets/supabase-BbozEmIR.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-Dwnv0UXs.css">
+    <link rel="modulepreload" crossorigin href="./assets/icons-B8OhpVbD.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-B565OV7v.css">
   </head>
   <body>
     <div id="root"></div>
